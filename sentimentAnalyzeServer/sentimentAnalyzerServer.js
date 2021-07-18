@@ -35,7 +35,7 @@ app.get("/",(req,res)=>{
 app.get("/url/emotion", (req,res) => {
 
   const analyzeParams = {
-    'url': req.query.url,
+    'url': req.query.url.trim(),
     'features': {
       'emotion': {'document':true}
       }
@@ -54,7 +54,7 @@ app.get("/url/emotion", (req,res) => {
 app.get("/url/sentiment", (req,res) => {
 
   let analyzeParams = {
-   'url': req.query.url,
+   'url': req.query.url.trim(),
    'features': {
      'sentiment': {'document':true}
      }
